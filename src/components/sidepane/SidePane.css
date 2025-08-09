@@ -1,0 +1,51 @@
+.side-pane{
+    border-right: 1px solid #ccc;
+    min-width: 20rem;
+    transition: min-width 0.3s ease;
+    overflow: hidden;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.side-pane.collapsed {
+    min-width: 50px;
+    width: 50px;
+}
+
+.toggle-button {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 100;
+}
+
+.toggle-button:hover {
+    background: #e0e0e0;
+}
+
+.resize-handle {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    cursor: col-resize;
+    background: transparent;
+    transition: background 0.2s;
+    z-index: 90;
+}
+
+.resize-handle:hover, 
+.side-pane.resizing .resize-handle {
+    background: rgba(0, 120, 215, 0.4);
+}
+
+/* Disable text selection during resize */
+.side-pane.resizing {
+    user-select: none;
+}
